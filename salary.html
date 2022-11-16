@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salary statistic</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;1,600&display=swap');
+    :root{
+
+      /* font */
+      --Font: 'Titillium Web', sans-serif;
+    }
+    *{
+      font-family: var(--Font) ;
+    }
+  </style>
+
+  <body class="vh-100 d-flex justify-content-center align-items-center bg-dark" >
+      <div class="w-auto h-auto bg-light rounded-4">
+        <h3 class="alert text-primary text-center title text-capitalize mb-0">salary statisic</h3>
+        <form action="" class="alert text mb-0">
+          <input type="number" min="0" placeholder="Salary :" id="salary" class="form-control mb-3">
+
+          <input type="number" min="0" placeholder="Working hours :" id="workingHours" class="form-control d-inline w-75" onkeyup="hourlyRate()" >
+          <select onchange="WHsel()"  class="alert p-1 ">
+              <option id="WHmonthly">Monthly</option>
+              <option id="WHdaily">Daily</option>
+          </select>
+
+          <input type="number" min="0" placeholder="Spending :" id="spending" class=" form-control d-inline w-75" onkeyup="rest()">
+          <select onchange="spendingsel()"  class="alert p-1 mb-0">
+            <option id="Sdaily">Daily</option>
+              <option id="Smonthly">Monthly</option>
+
+          </select>
+          <hr class="container text-primary w-75 m-4">
+
+          <div class="container bg-light h-auto text-primary" style="width:fit-content">
+            <span class="alert fs-5 ">Hourly rate : </span><h4 class="d-inline" id="hourlyRate"></h4><br>
+            <span class="alert fs-5">Rest : </span><h4 class="d-inline m-5 " id="rest"></h4> <select onchange="restSel()" class="alert p-1 ms-5">
+              <option id="Rmonthly">Monthly</option>
+              <option id="Ryearly">Yearly</option>
+          </select>
+          </div>
+
+          <button class="btn btn-primary form-control" onclick="reset()">Reset</button>
+        </form>
+      </div>
+    <script src="salary.js"></script>
+  </body>
+</html>
